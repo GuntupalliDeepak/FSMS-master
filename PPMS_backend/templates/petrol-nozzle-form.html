@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extracss %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+<div class="head-holder">
+    <section class="content-header">
+        <h1>
+            Petrol Nozzle Wise Sale Record
+            <small>All</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{% url 'home' %}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="{% url 'petrol-nozzle' %}">Petrol Nozzal Record</a> </li>
+            <li class="active">Petrol Nozzal Form</li>
+        </ol>
+    </section>
+</div>
+    <div class="container">
+        <form id="contact" action="" method="post">
+            {% csrf_token %}
+            <h3>Petrol Nozzle Form</h3>
+            <fieldset>
+                <input placeholder="Opening Reading For Nozzle 1" step="0.01" min="0" max="10000" name="openingReadingForNozzle1" type="number"
+                       tabindex="1" autofocus required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Sale For Nozzle 1" required step="0.01" min="0" max="10000" name="saleForNozzle1" type="number" tabindex="2">
+            </fieldset>
+            <fieldset>
+                <input placeholder="Opening Reading For Nozzle 2"required step="0.01" min="0" max="10000" name="openingReadingForNozzle2" type="number"
+                       tabindex="3">
+            </fieldset>
+            <fieldset>
+                <input placeholder="Sale For Nozzle 2" step="0.01" min="0"required max="10000" name="saleForNozzle2" type="number" tabindex="4">
+            </fieldset>
+            <fieldset>
+                <input placeholder="Opening Reading For Nozzle 3" step="0.01" min="0"required max="10000" name="openingReadingForNozzle3" type="number"
+                       tabindex="5" >
+            </fieldset>
+            <fieldset>
+                <input required placeholder="Sale For Nozzle 3" step="0.01" min="0" max="10000" name="saleForNozzle3" type="number" tabindex="6">
+            </fieldset>
+            <fieldset>
+                <input placeholder="Opening Reading For Nozzle 4" step="0.01" min="0" max="10000" name="openingReadingForNozzle4" type="number" required
+                       tabindex="7">
+            </fieldset>
+            <fieldset>
+                <input required placeholder="Sale For Nozzle 4" step="0.01" min="0" max="10000" name="saleForNozzle4" type="number" tabindex="8">
+            </fieldset>
+             <fieldset>
+                <input required placeholder="Rate for Petrol" step="0.01" min="0" max="10000" name="rate" type="number" tabindex="9">
+            </fieldset>
+             <fieldset>
+                <input placeholder="Pump Testing" name="testing" type="number" tabindex="10" required>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="Sending">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

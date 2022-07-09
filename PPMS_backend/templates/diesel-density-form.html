@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extracss %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+<div class="head-holder">
+    <section class="content-header">
+        <h1>
+            Diesel Density Record
+            <small>All</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{% url 'home' %}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li ><a href="{% url 'diesel-density' %}"> Density Record </a></li>
+            <li class="active">Diesel Density Form</li>
+        </ol>
+    </section>
+</div>
+    <div class="container">
+        <form id="contact" action="" method="post">
+            {% csrf_token %}
+            <h3>Diesel Density Form</h3>
+            <fieldset>
+                <input placeholder="Morning Observed Hydro Density" name="morningObservedHydroDensity" type="number"
+                       tabindex="1" autofocus required >
+            </fieldset>
+            <fieldset>
+                <input placeholder="Morning Observed Temperature Density" name="morningObservedTemperatureDensity"
+                       type="number" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Morning Density at 15 &#176;C" name="morningDensity" type="number"
+                       tabindex="3"step="0.01" min="0" max="1000" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Receipts Invoice Number" name="receiptsInvoiceNumber" type="number" tabindex="4" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Receipts Quantity" name="receiptsQuantity" type="number"
+                       tabindex="5" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Receipts Observed Hydro Density" name="receiptsObservedHydroDensity" type="number"
+                       tabindex="6" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Receipts Observed Temperature Density" name="receiptsObservedTemperatureDensity"
+                       type="number"
+                       tabindex="7" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Receipts Density at 15 &#176;C" name="receiptsDensity" step="0.01" min="0" max="10000"  type="number" tabindex="8" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="As Per Challan Density at &#176;C" name="asPerChallanDensity" type="number"
+                       tabindex="9"step="0.01" min="0" max="10000" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Decantation Observed Hydro Density" name="decantationObservedHydroDensity"
+                       type="number" tabindex="10" required step="0.01" min="0" max="10000">
+            </fieldset>
+            <fieldset>
+                <input type="number" placeholder="Decantation Observed Temperature Density"
+                       name="decantationObservedTemperatureDensity" tabindex="11" required>
+            </fieldset>
+            <fieldset>
+                <input type="number" placeholder="Decantation Density at 15 &#176;C" name="decantationDensity"
+                       tabindex="12" required>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit=.Sending">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}
